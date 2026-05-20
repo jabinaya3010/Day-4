@@ -1,0 +1,36 @@
+.heading{
+        color: rgb(55, 82, 73);
+        background-color: rgb(36, 211, 217);
+    }
+    .para{
+        color: rgba(196, 255, 245, 0.301);
+        background-color: rgba(49, 137, 22, 0.41);
+    }
+    .head1{
+        color: rgb(28, 158, 158);
+        background-color: rgba(67, 72, 159, 0.504);
+    }
+   .para1{
+    color: cadetblue;
+    background-color: rgb(171, 184, 61);
+   }
+   .head2{
+    color: chocolate;
+    background-color: rgb(238, 11, 11);
+   }
+   .para2{
+    color: pink;
+    background-color: rgb(71, 55, 71);
+   }
+   .head3{
+    color: rgb(46, 55, 74);
+    background-color: crimson;
+   }
+   #div{
+    color: rgb(83, 97, 97);
+    background-color: darkred;
+   }
+   .para3{
+    color: color(srgb red green blue);
+    background-color: brown;
+   }

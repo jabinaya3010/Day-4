@@ -1,0 +1,15 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.div{
+    padding: 30px;
+    border:dotted 10px;
+    background-color: rgb(229, 23, 136);
+    color: rgba(23, 90, 167, 0.345);
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    margin: lavender;
+}

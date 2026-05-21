@@ -22,10 +22,7 @@
     color: pink;
     background-color: rgb(71, 55, 71);
    }
-   .head3{
-    color: rgb(46, 55, 74);
-    background-color: crimson;
-   }
+   
    #div{
     color: rgb(83, 97, 97);
     background-color: darkred;
@@ -33,4 +30,8 @@
    .para3{
     color: color(srgb red green blue);
     background-color: brown;
+   }
+   .head{
+    color: chartreuse;
+    background-color: blanchedalmond;
    }

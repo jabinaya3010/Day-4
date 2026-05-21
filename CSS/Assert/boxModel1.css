@@ -1,0 +1,23 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.div{
+    padding: 30px;
+    border:  dashed 10px;
+    background-color: blueviolet;
+    color: brown;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+}
+.di{
+    padding: 50px;
+    border: 50px;
+    background-color:white;
+    color:red;
+    margin:100px;
+    text-align: center;
+    
+}

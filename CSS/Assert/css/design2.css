@@ -1,0 +1,32 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+} 
+ .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color:palegreen;
+            padding: 15px 30px;
+        }
+
+        .logo{
+            color: purple;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu{
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .menu li a{
+            text-decoration: none;
+            color: purple;
+            font-size: 18px;
+        }
+
+    

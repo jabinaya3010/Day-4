@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Figma UI Clone</title>
+
+  
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#f5f5f5;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      height:80px;
+      background:white;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:0 50px;
+      border-bottom:1px solid #ddd;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#222;
+    }
+
+    .menu{
+      display:flex;
+      gap:35px;
+    }
+
+    .menu a{
+      text-decoration:none;
+      color:#222;
+      font-size:16px;
+      font-weight:500;
+    }
+
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:20px;
+    }
+
+    .search-box{
+      width:250px;
+      height:42px;
+      border-radius:25px;
+      border:none;
+      background:#f0f0f0;
+      padding-left:20px;
+      outline:none;
+    }
+
+    .login{
+      text-decoration:none;
+      color:#222;
+      font-weight:500;
+    }
+
+    .signup{
+      padding:10px 22px;
+      border:1px solid #222;
+      border-radius:10px;
+      text-decoration:none;
+      color:#222;
+      font-weight:500;
+    }
+
+    /* MAIN SECTION */
+
+    .main{
+      width:100%;
+      min-height:calc(100vh - 80px);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:80px;
+      padding:60px;
+    }
+
+    /* LEFT CONTENT */
+
+    .left{
+      width:420px;
+    }
+
+    .profile{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      margin-bottom:25px;
+    }
+
+    .circle{
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      background:linear-gradient(to right,#5b5cff,#b86dff);
+    }
+
+    .profile span{
+      font-size:20px;
+      font-weight:500;
+    }
+
+    .left h1{
+      font-size:48px;
+      line-height:65px;
+      color:#111;
+      margin-bottom:20px;
+    }
+
+    .details{
+      color:#666;
+      font-size:18px;
+      margin-bottom:35px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:16px 35px;
+      background:#168bff;
+      color:white;
+      text-decoration:none;
+      border-radius:12px;
+      font-size:18px;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#006fe0;
+    }
+
+    /* RIGHT IMAGE */
+
+    .right img{
+      width:850px;
+      border-radius:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:1200px){
+
+      .main{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .left{
+        width:100%;
+      }
+
+      .profile{
+        justify-content:center;
+      }
+
+      .right img{
+        width:100%;
+        max-width:700px;
+      }
+
+      nav{
+        padding:0 20px;
+      }
+
+      .menu{
+        display:none;
+      }
+
+      .search-box{
+        width:180px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div><img src="../Assert/logo/Figma.png" alt="" width="40" height="30"></div>
+
+    <div class="logo">Community</div>
+
+    <div class="menu">
+      <a href="#">Design resources</a>
+      <a href="#">Websites</a>
+      <a href="#">Figma Make</a>
+      <a href="#">Extensions</a>
+      <a href="#">Whiteboarding</a>
+      <a href="#">Presentations</a>
+    </div>
+
+    <div class="nav-right">
+      <input type="text" placeholder="Search" class="search-box">
+
+      <a href="#" class="login">Log in</a>
+
+      <a href="#" class="signup">Sign up</a>
+    </div>
+
+  </nav>
+
+
+  <!-- MAIN SECTION -->
+
+  <section class="main">
+
+    <!-- LEFT -->
+
+    <div class="left">
+
+      <div class="profile">
+        <div class="circle"></div>
+        <span>Simmmple</span>
+      </div>
+
+      <h1>
+        Purity UI Dashboard - <br>
+        Chakra UI Dashboard
+      </h1>
+
+      <p class="details">
+        Design file • ♡ 1.4k • 100k users
+      </p>
+
+      <a href="#" class="btn">Open in Figma</a>
+
+    </div>
+
+
+    <!-- RIGHT -->
+
+    <div class="right">
+      <img src="../Assert/logo/dashboard" alt="dashboard">
+    </div>
+
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.back{
+    background-image: url('../logo/back1.jpg');
+    height: 100vh;
+    background-size:auto;
+}
+.ground{
+    background-image: url('../logo/back2.jpg');
+    background-size:contain;
+    width:100%;
+    height:50%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.good{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

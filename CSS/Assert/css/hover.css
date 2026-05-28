@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color:cadetblue;
+    padding: 40px;
+}
+.hover{
+    background-color:rgb(137, 210, 213);
+    width:1300px;
+    height: 200px;
+    border-radius: 8px;
+    padding:30px
+}
+.hover button{
+    width: 100px;
+    height: 30px;
+    background-color: darkcyan;
+}
+.hover button:hover{
+    transform: scale(0.8);
+    
+}
+.focus1:focus{
+    background-color:chocolate;
+}

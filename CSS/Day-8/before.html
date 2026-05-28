@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profile Card</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(to right, #ff9a9e, #fad0c4);
+}
+
+.card{
+    width:320px;
+    padding:30px;
+    background:white;
+    border-radius:20px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    transition:0.5s;
+}
+
+.card img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid white;
+    position:relative;
+    z-index:1;
+    transition:0.5s;
+}
+
+.card h2{
+    margin-top:15px;
+    font-size:28px;
+    position:relative;
+    z-index:1;
+}
+
+.card p{
+    color:gray;
+    margin:10px 0 20px;
+    position:relative;
+    z-index:1;
+}
+
+button{
+    padding:10px 25px;
+    border:none;
+    background:purple;
+    color:white;
+    border-radius:30px;
+    cursor:pointer;
+    transition:0.5s;
+    position:relative;
+    z-index:1;
+}
+
+/* HOVER EFFECT */
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* ROTATE ANIMATION */
+.card:hover::before{
+    transform:rotate(180deg);
+}
+
+.card:hover::after{
+    transform:rotate(-180deg);
+}
+
+.card:hover img{
+    transform:scale(1.1) rotate(5deg);
+}
+
+button:hover{
+    background:hotpink;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+    <img src="../Assert/Images/ChatGPT Image May 29, 2026, 12_32_47 AM.png" alt="profile">
+
+    <h2>Abinaya</h2>
+
+    <p>Frontend Developer</p>
+
+    <button>Follow</button>
+
+</div>
+
+</body>
+</html>

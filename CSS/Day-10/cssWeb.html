@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Concepts Showcase</title>
+
+<style>
+
+/* BASIC SETUP */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f4f4;
+    color:#333;
+    line-height:1.6;
+}
+
+/* TYPOGRAPHY */
+h1{
+    text-align:center;
+    font-size:3rem;
+    color:#fff;
+}
+
+h2{
+    color:#2c3e50;
+    margin-bottom:10px;
+}
+
+p{
+    font-size:1rem;
+}
+
+/* BACKGROUND COLOR */
+header{
+    background:linear-gradient(135deg,#6a11cb,#2575fc);
+    padding:40px;
+}
+
+/* NAVIGATION */
+nav{
+    background:#222;
+    padding:15px;
+}
+
+nav ul{
+    display:flex; /* FLEX */
+    justify-content:center;
+    gap:20px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    position:relative;
+}
+
+/* PSEUDO ELEMENT */
+nav a::after{
+    content:"";
+    width:0;
+    height:2px;
+    background:#00ffcc;
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    transition:0.4s;
+}
+
+/* PSEUDO CLASS */
+nav a:hover::after{
+    width:100%;
+}
+
+/* GRID */
+.container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    padding:30px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.4s;
+    padding-bottom: 20px;
+}
+
+/* PSEUDO CLASS */
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* SPECIFICITY EXAMPLE */
+.highlight{
+    color:green;
+}
+
+#special{
+    color:red;
+}
+
+/* FLEXBOX */
+.flex-box{
+    display:flex;
+    justify-content:space-around;
+    margin-top:10px;
+}
+
+.flex-item{
+    background:#3498db;
+    color:white;
+    padding:10px;
+    border-radius:5px;
+}
+
+/* ANIMATION */
+.animation-box{
+    width:80px;
+    height:80px;
+    background:orange;
+    margin:20px auto;
+    animation:rotateBox 3s infinite linear;
+}
+
+@keyframes rotateBox{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* POSITION */
+.position-box{
+    position:relative;
+    background:#ddd;
+    height:120px;
+    margin-top:15px;
+}
+
+.absolute-box{
+    position:absolute;
+    top:20px;
+    right:20px;
+    background:red;
+    color:white;
+    padding:10px;
+}
+
+/* BUTTON */
+button{
+    background:#2575fc;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+   
+}
+
+button:hover{
+    background:#0d47a1;
+}
+
+/* MEDIA QUERY */
+@media(max-width:768px){
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    nav ul{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>CSS Learning Hub</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Examples</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="container">
+
+    <div class="card">
+        <h2>CSS Styles</h2>
+        <p>CSS (Cascading Style Sheets) is a stylesheet language used to design and format web pages. It controls the appearance of HTML elements, such as colors, fonts, layouts, spacing, animations, and responsiveness.
+Improves the visual appearance of websites.
+Separates design from content.
+Creates responsive layouts for different devices.   
+Adds animations and interactive effects</p>
+<div style="text-align:center; margin-bottom:30px;">
+    <button>Learn more</button>
+</div>
+    </div>
+
+    <div class="card">
+        <h2>Selectors</h2>
+        <p>Element, Class, ID, Universal and Group selectors help target elements.</p>
+        <div style="text-align:center; margin-bottom:30px;">
+    <button>Learn more</button>
+</div>
+    </div>
+
+    <div class="card">
+        <h2>Specificity</h2>
+        <p class="highlight">Class Selector Example</p>
+        <p id="special">ID Selector Example (Higher Priority)</p>
+        <div style="text-align:center; margin-bottom:30px;">
+    <button>Learn more</button>
+</div>
+    </div>
+
+    <div class="card">
+        <h2>Typography</h2>
+        <p>Typography controls fonts, size, spacing and readability.</p>
+        <div style="text-align:center; margin-bottom:30px;">
+    <button>Learn more</button>
+</div>
+    </div>
+
+    <div class="card">
+        <h2>Units & Colors</h2>
+        <p>Units: px, %, rem, em, vh, vw</p>
+        <p style="color:blue;">Blue Text Example</p>
+        <div style="text-align:center; margin-bottom:30px;">
+    <button>Learn more</button>
+</div>
+    </div>  
+
+    <div class="card">
+        <h2>Flexbox</h2>
+        <p>Flexbox (Flexible Box Layout) is a CSS layout model used to arrange items in a row or column and distribute space efficiently.</p>
+        <div class="flex-box">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+        </div>
+        <div style="text-align:center; margin-bottom:30px;">
+    <button>Learn more</button>
+</div>
+    </div>
+
+    <div class="card">
+        <h2>Grid Layout</h2>
+        <p>Cards are arranged using CSS Grid.CSS Grid is a powerful two-dimensional layout system that allows web developers to create complex and responsive layouts with ease. Unlike Flexbox, which works mainly in one direction (either row or column), Grid can control both rows and columns at the same time. It helps organize content into a structured layout, making it ideal for web pages, image galleries, dashboards, portfolios, and responsive designs.</p>
+        <div style="text-align:center; margin-bottom:30px;">
+    <button>Learn more</button>
+</div>
+    </div>
+
+    <div class="card">
+        <h2>Animation</h2>
+        <p>CSS Animation is a feature that allows web developers to add movement and visual effects to elements on a webpage without using JavaScript. Animations make websites more interactive, engaging, and visually appealing. They can be used to create effects such as fading, sliding, rotating, bouncing, scaling, and many other transitions between different styles.</p>
+        <div class="animation-box"></div>
+        <div style="text-align:center; margin-bottom:30px;">
+    <button>Learn more</button>
+</div>
+    </div>
+
+    <div class="card">
+        <h2>Position</h2>
+        <p>The position property in CSS is used to control how an element is placed on a webpage. It determines the positioning method of an element and allows developers to move elements using properties such as top, right, bottom, and left. Positioning is important for creating layouts, navigation bars, popups, overlays, and many other web design components.</p>
+        <div class="position-box">
+            <div class="absolute-box">Absolute</div>
+        </div>
+        <div style="text-align:center; margin-bottom:30px;">
+    <button>Learn more</button>
+</div>
+    </div>
+
+</section>
+
+<div style="text-align:center; margin-bottom:30px;">
+    <button>Learn CSS</button>
+</div>
+
+</body>
+</html>

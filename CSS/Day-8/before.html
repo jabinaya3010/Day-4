@@ -58,6 +58,30 @@ body{
     position:relative;
     z-index:1;
 }
+.card::before{
+    content:"";
+    position:absolute;
+    width:200px;
+    height:200px;
+    background:purple;
+    border-radius:50%;
+    top:-80px;
+    left:-80px;
+    transition:0.5s;
+}
+
+/* AFTER EFFECT */
+.card::after{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    background:hotpink;
+    border-radius:50%;
+    bottom:-60px;
+    right:-60px;
+    transition:0.5s;
+}
 
 button{
     padding:10px 25px;

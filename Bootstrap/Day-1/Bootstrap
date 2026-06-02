@@ -1,0 +1,7 @@
+What is Bootstrap?
+
+Bootstrap is a free and open-source CSS framework used to create responsive and mobile-friendly websites quickly. It provides pre-built CSS classes and JavaScript components, so you don't need to write everything from scratch.
+
+Important class?
+
+Some of the most important Bootstrap classes include container and container-fluid for page layout, row and col for creating responsive grids, btn and btn-primary for styling buttons, card for creating content cards, navbar for navigation bars, text-center for text alignment, bg-primary for background colors, p-3 and m-3 for padding and margin spacing, d-flex for Flexbox layouts, and img-fluid for responsive images. These classes help developers build modern, attractive, and responsive websites efficiently while reducing development time.

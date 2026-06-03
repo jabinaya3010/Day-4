@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white">
+        <div class="container mx-auto flex justify-between items-center p-5">
+            <h1 class="text-3xl font-bold">TechNova</h1>
+
+            <ul class="flex gap-6">
+                <li><a href="#home" class="hover:text-gray-200">Home</a></li>
+                <li><a href="#about" class="hover:text-gray-200">About</a></li>
+                <li><a href="#services" class="hover:text-gray-200">Services</a></li>
+                <li><a href="#contact" class="hover:text-gray-200">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gray-100 py-24 text-center">
+        <h1 class="text-5xl font-bold mb-4">
+            Build Your Future With Us
+        </h1>
+
+        <p class="text-lg text-gray-600 mb-6">
+            We provide innovative digital solutions to help businesses grow faster.
+        </p>
+
+        <button class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700">
+            Get Started
+        </button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800"
+                 alt="About Us"
+                 class="rounded-lg shadow-lg">
+
+            <div>
+                <h2 class="text-4xl font-bold mb-4">About Us</h2>
+
+                <p class="text-gray-600 leading-7">
+                    We are a leading technology company specializing in
+                    web development, mobile applications, UI/UX design,
+                    and digital marketing. Our mission is to help businesses
+                    succeed through modern technology and innovative solutions.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-gray-100 py-16">
+
+        <h2 class="text-4xl font-bold text-center mb-10">
+            Our Services
+        </h2>
+
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Card 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
+                <h3 class="text-2xl font-bold mb-3">Web Development</h3>
+                <p class="text-gray-600">
+                    Responsive and modern websites built with the latest technologies.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
+                <h3 class="text-2xl font-bold mb-3">UI/UX Design</h3>
+                <p class="text-gray-600">
+                    Attractive and user-friendly interfaces for better user experience.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
+                <h3 class="text-2xl font-bold mb-3">Digital Marketing</h3>
+                <p class="text-gray-600">
+                    Grow your business online through SEO and social media marketing.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+
+        <h2 class="text-4xl font-bold text-center mb-10">
+            Contact Us
+        </h2>
+
+        <form class="max-w-xl mx-auto px-6 space-y-4">
+
+            <input
+                type="text"
+                placeholder="Your Name"
+                class="w-full border p-3 rounded-lg">
+
+            <input
+                type="email"
+                placeholder="Your Email"
+                class="w-full border p-3 rounded-lg">
+
+            <textarea
+                placeholder="Your Message"
+                class="w-full border p-3 rounded-lg h-32"></textarea>
+
+            <button
+                class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+
+        <div class="container mx-auto text-center">
+
+            <p>© 2026 TechNova. All Rights Reserved.</p>
+
+            <div class="flex justify-center gap-6 mt-4">
+                <a href="#" class="hover:text-blue-400">Facebook</a>
+                <a href="#" class="hover:text-blue-400">Instagram</a>
+                <a href="#" class="hover:text-blue-400">Twitter</a>
+                <a href="#" class="hover:text-blue-400">LinkedIn</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

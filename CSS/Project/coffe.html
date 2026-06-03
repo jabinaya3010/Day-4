@@ -1,117 +1,842 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Shop</title>
-    <link rel="stylesheet" href="coffe.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brew Haven Coffee Shop</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f8f5f2;
+}
+
+nav{
+    background:#3e2723;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    color:#fff;
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav ul li a:hover{
+    color:#ffcc80;
+}
+
+.hero{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+.btn{
+    background:#d2691e;
+    padding:12px 25px;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    color:#3e2723;
+    font-size:40px;
+}
+
+
+.about{
+    text-align:center;
+    line-height:1.8;
+}
+
+.category{
+    margin-bottom:50px;
+}
+
+.category h3{
+    margin-bottom:20px;
+    color:#6d4c41;
+    font-size:28px;
+}
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h4{
+    margin-bottom:10px;
+}
+
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.review{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.stars{
+    color:gold;
+    margin:10px 0;
+}
+
+
+.contact{
+    text-align:center;
+    line-height:2;
+}
+
+.contact-form{
+    max-width:600px;
+    margin:30px auto;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+}
+
+.contact-form button{
+    background:#6d4c41;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    cursor:pointer;
+}
+.quantity{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    outline:none;
+}
+
+.order-btn{
+    width:100%;
+    margin-top:10px;
+    padding:12px;
+    border:none;
+    border-radius:5px;
+    background:#6d4c41;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.order-btn:hover{
+    background:#3e2723;
+    transform:scale(1.05);
+}
+
+
+footer{
+    background:#3e2723;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero-content h1{
+        font-size:40px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Coffee Shop</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<nav>
+    <div class="logo">☕ Brew Haven</div>
 
-    <section id="home" class="hero">
-        <h2>Freshly Brewed Coffee</h2>
-        <p>Enjoy the finest coffee made with love and passion.</p>
-        <button>Order Now</button>
-    </section>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
-    <section id="menu">
-       <section id="menu">
-    <h2>Our Menu</h2>
 
-    <div class="menu-container">
-        <div class="card"><h3>Espresso</h3><p>₹120</p></div>
-        <div class="card"><h3>Americano</h3><p>₹130</p></div>
-        <div class="card"><h3>Cappuccino</h3><p>₹150</p></div>
-        <div class="card"><h3>Latte</h3><p>₹180</p></div>
-        <div class="card"><h3>Mocha</h3><p>₹190</p></div>
-        <div class="card"><h3>Macchiato</h3><p>₹170</p></div>
-        <div class="card"><h3>Flat White</h3><p>₹180</p></div>
-        <div class="card"><h3>Irish Coffee</h3><p>₹220</p></div>
-        <div class="card"><h3>Affogato</h3><p>₹210</p></div>
-        <div class="card"><h3>Cold Brew</h3><p>₹200</p></div>
-
-        <div class="card"><h3>Iced Latte</h3><p>₹190</p></div>
-        <div class="card"><h3>Iced Mocha</h3><p>₹200</p></div>
-        <div class="card"><h3>Caramel Latte</h3><p>₹220</p></div>
-        <div class="card"><h3>Vanilla Latte</h3><p>₹220</p></div>
-        <div class="card"><h3>Hazelnut Latte</h3><p>₹230</p></div>
-        <div class="card"><h3>French Vanilla Coffee</h3><p>₹240</p></div>
-        <div class="card"><h3>Turkish Coffee</h3><p>₹250</p></div>
-        <div class="card"><h3>Arabic Coffee</h3><p>₹250</p></div>
-        <div class="card"><h3>Vietnamese Coffee</h3><p>₹260</p></div>
-        <div class="card"><h3>Cuban Coffee</h3><p>₹240</p></div>
-
-        <div class="card"><h3>Black Coffee</h3><p>₹100</p></div>
-        <div class="card"><h3>Filter Coffee</h3><p>₹120</p></div>
-        <div class="card"><h3>South Indian Filter Coffee</h3><p>₹140</p></div>
-        <div class="card"><h3>Instant Coffee</h3><p>₹90</p></div>
-        <div class="card"><h3>Bulletproof Coffee</h3><p>₹250</p></div>
-        <div class="card"><h3>Ristretto</h3><p>₹150</p></div>
-        <div class="card"><h3>Lungo</h3><p>₹150</p></div>
-        <div class="card"><h3>Doppio</h3><p>₹180</p></div>
-        <div class="card"><h3>Cortado</h3><p>₹190</p></div>
-        <div class="card"><h3>Red Eye Coffee</h3><p>₹210</p></div>
-
-        <div class="card"><h3>Black Eye Coffee</h3><p>₹230</p></div>
-        <div class="card"><h3>Dead Eye Coffee</h3><p>₹250</p></div>
-        <div class="card"><h3>Honey Latte</h3><p>₹220</p></div>
-        <div class="card"><h3>Cinnamon Coffee</h3><p>₹200</p></div>
-        <div class="card"><h3>Pumpkin Spice Latte</h3><p>₹260</p></div>
-        <div class="card"><h3>Chocolate Mocha</h3><p>₹240</p></div>
-        <div class="card"><h3>White Chocolate Mocha</h3><p>₹250</p></div>
-        <div class="card"><h3>Toffee Nut Latte</h3><p>₹260</p></div>
-        <div class="card"><h3>Mint Mocha</h3><p>₹240</p></div>
-        <div class="card"><h3>Coconut Latte</h3><p>₹230</p></div>
-
-        <div class="card"><h3>Almond Milk Latte</h3><p>₹240</p></div>
-        <div class="card"><h3>Oat Milk Latte</h3><p>₹250</p></div>
-        <div class="card"><h3>Soy Latte</h3><p>₹240</p></div>
-        <div class="card"><h3>Caramel Macchiato</h3><p>₹260</p></div>
-        <div class="card"><h3>Salted Caramel Coffee</h3><p>₹260</p></div>
-        <div class="card"><h3>Maple Latte</h3><p>₹250</p></div>
-        <div class="card"><h3>Orange Mocha</h3><p>₹260</p></div>
-        <div class="card"><h3>Lavender Latte</h3><p>₹270</p></div>
-        <div class="card"><h3>Rose Latte</h3><p>₹270</p></div>
-        <div class="card"><h3>Matcha Coffee</h3><p>₹280</p></div>
-
-        <div class="card"><h3>Espresso Con Panna</h3><p>₹220</p></div>
-        <div class="card"><h3>Café au Lait</h3><p>₹180</p></div>
-        <div class="card"><h3>Frappe</h3><p>₹230</p></div>
-        <div class="card"><h3>Frappuccino</h3><p>₹260</p></div>
-        <div class="card"><h3>Nitro Cold Brew</h3><p>₹280</p></div>
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Fresh Coffee Everyday</h1>
+        <p>Experience the rich aroma of premium coffee beans.</p>
+        <a href="#menu" class="btn">Explore Menu</a>
     </div>
 </section>
-    </section>
 
-    <section id="about">
-        <h2>About Us</h2>
+
+<section id="about">
+    <h2 class="section-title">About Us</h2>
+
+    <div class="about">
         <p>
-            Welcome to Coffee Shop! We serve premium-quality coffee,
-            delicious snacks, and a cozy atmosphere for coffee lovers.
+            Brew Haven Coffee Shop is dedicated to serving the finest coffee
+            crafted from premium coffee beans sourced from around the world.
+            Our cozy atmosphere, friendly baristas, and delicious beverages
+            make us the perfect place to relax, work, or spend time with friends.
         </p>
-    </section>
+    </div>
+</section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: coffee@example.com</p>
-        <p>Phone: +91 9876543210</p>
-    </section>
 
-    <footer>
-        <p>&copy; 2026 Coffee Shop. All Rights Reserved.</p>
-    </footer>
+<section id="menu">
+
+<h2 class="section-title">50+ Coffee Varieties</h2>
+
+<div class="category">
+<h3>Espresso Based</h3>
+<div class="menu-grid">
+<div class="card"><h4>Espresso</h4><p>₹120</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Americano</h4><p>₹130</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Cappuccino</h4><p>₹150</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Latte</h4><p>₹160</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Mocha</h4><p>₹180</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Flat White</h4><p>₹170</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Macchiato</h4><p>₹160</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Cortado</h4><p>₹170</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Doppio</h4><p>₹180</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Ristretto</h4><p>₹180</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+</div>
+</div>
+
+<div class="category">
+<h3>Cold Coffee</h3>
+<div class="menu-grid">
+<div class="card"><h4>Cold Brew</h4><p>₹200</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Nitro Cold Brew</h4><p>₹250</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Iced Latte</h4><p>₹210</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Iced Mocha</h4><p>₹220</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Frappe</h4><p>₹230</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Frappuccino</h4><p>₹240</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Caramel Cold Brew</h4><p>₹250</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Vanilla Cold Brew</h4><p>₹240</p><select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Hazelnut Cold Brew</h4><p>₹250</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Iced Americano</h4><p>₹200</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+</div>
+</div>
+
+<div class="category">
+<h3>Specialty Coffee</h3>
+<div class="menu-grid">
+<div class="card"><h4>Caramel Latte</h4><p>₹220</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Vanilla Latte</h4><p>₹220</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Hazelnut Latte</h4><p>₹230</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Pumpkin Spice Latte</h4><p>₹260</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Honey Latte</h4><p>₹240</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Cinnamon Latte</h4><p>₹240</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Rose Latte</h4><p>₹260</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Lavender Latte</h4><p>₹260</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Chocolate Mocha</h4><p>₹250</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>White Mocha</h4><p>₹250</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+</div>
+</div>
+
+<div class="category">
+<h3>International Coffee</h3>
+<div class="menu-grid">
+<div class="card"><h4>Turkish Coffee</h4><p>₹280</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Arabic Coffee</h4><p>₹270</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Vietnamese Coffee</h4><p>₹280</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Cuban Coffee</h4><p>₹290</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Greek Coffee</h4><p>₹280</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Irish Coffee</h4><p>₹300</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Italian Espresso</h4><p>₹250</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Spanish Latte</h4><p>₹260</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Mexican Coffee</h4><p>₹280</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Cafe au Lait</h4><p>₹220</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+</div>
+</div>
+
+<div class="category">
+<h3>Traditional Coffee</h3>
+<div class="menu-grid">
+<div class="card"><h4>South Indian Filter Coffee</h4><p>₹120</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Black Coffee</h4><p>₹100</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Jaggery Coffee</h4><p>₹150</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Cardamom Coffee</h4><p>₹160</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Ginger Coffee</h4><p>₹150</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Sukku Coffee</h4><p>₹170</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Herbal Coffee</h4><p>₹180</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Chicory Coffee</h4><p>₹160</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Palm Sugar Coffee</h4><p>₹170</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+<div class="card"><h4>Instant Coffee</h4><p>₹90</p>
+<select class="quantity">
+        <option>1 Cup</option>
+        <option>2 Cups</option>
+        <option>3 Cups</option>
+        <option>4 Cups</option>
+    </select>
+
+    <button class="order-btn">Order Now</button></div>
+</div>
+</div>
+
+</section>
+
+
+<section id="gallery">
+<h2 class="section-title">Gallery</h2>
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+<img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+<img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0">
+<img src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff">
+<img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6">
+</div>
+</section>
+
+
+<section id="reviews">
+<h2 class="section-title">Customer Reviews</h2>
+
+<div class="review-grid">
+
+<div class="review">
+<h3>Priya</h3>
+<div class="stars">★★★★★</div>
+<p>Excellent coffee and wonderful ambiance.</p>
+</div>
+
+<div class="review">
+<h3>Rahul</h3>
+<div class="stars">★★★★★</div>
+<p>Best cold brew I've ever tasted.</p>
+</div>
+
+<div class="review">
+<h3>Ananya</h3>
+<div class="stars">★★★★★</div>
+<p>Friendly staff and delicious pastries.</p>
+</div>
+
+<div class="review">
+<h3>Arun</h3>
+<div class="stars">★★★★☆</div>
+<p>Great place for work and meetings.</p>
+</div>
+
+<div class="review">
+<h3>Meena</h3>
+<div class="stars">★★★★★</div>
+<p>Highly recommend the caramel latte.</p>
+</div>
+
+<div class="review">
+<h3>Vikram</h3>
+<div class="stars">★★★★★</div>
+<p>Amazing atmosphere and premium coffee.</p>
+</div>
+
+</div>
+</section>
+
+
+<section id="contact">
+<h2 class="section-title">Contact Us</h2>
+
+<div class="contact">
+<p>📍 Chennai, Tamil Nadu</p>
+<p>📞 +91 98765 43210</p>
+<p>✉ info@brewhaven.com</p>
+<p>🕒 Open Daily: 8:00 AM - 10:00 PM</p>
+
+<form class="contact-form">
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 Brew Haven Coffee Shop | All Rights Reserved</p>
+</footer>
 
 </body>
 </html>

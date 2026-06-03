@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex min-h-screen">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-800 text-white p-6">
+            <h1 class="text-3xl font-bold mb-8">Admin Panel</h1>
+
+            <ul class="space-y-4">
+                <li>
+                    <a href="#" class="block p-3 bg-blue-600 rounded-lg">
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="block p-3 hover:bg-gray-700 rounded-lg">
+                        Users
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="block p-3 hover:bg-gray-700 rounded-lg">
+                        Courses
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="block p-3 hover:bg-gray-700 rounded-lg">
+                        Reports
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="block p-3 hover:bg-gray-700 rounded-lg">
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+
+            <h2 class="text-4xl font-bold mb-8">Dashboard Overview</h2>
+
+            <!-- Statistics Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-gray-500 text-lg">Total Users</h3>
+                    <p class="text-3xl font-bold text-blue-600 mt-2">1,250</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-gray-500 text-lg">Courses</h3>
+                    <p class="text-3xl font-bold text-green-600 mt-2">85</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-gray-500 text-lg">Revenue</h3>
+                    <p class="text-3xl font-bold text-purple-600 mt-2">$12,500</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-gray-500 text-lg">Reports</h3>
+                    <p class="text-3xl font-bold text-red-600 mt-2">34</p>
+                </div>
+
+            </div>
+
+            <!-- Recent Users Table -->
+            <div class="bg-white rounded-xl shadow-lg p-6 overflow-x-auto">
+
+                <h3 class="text-2xl font-bold mb-4">Recent Users</h3>
+
+                <table class="w-full border-collapse">
+
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="border p-3 text-left">ID</th>
+                            <th class="border p-3 text-left">Name</th>
+                            <th class="border p-3 text-left">Email</th>
+                            <th class="border p-3 text-left">Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td class="border p-3">1</td>
+                            <td class="border p-3">John Smith</td>
+                            <td class="border p-3">john@gmail.com</td>
+                            <td class="border p-3 text-green-600">Active</td>
+                        </tr>
+
+                        <tr>
+                            <td class="border p-3">2</td>
+                            <td class="border p-3">Sarah Lee</td>
+                            <td class="border p-3">sarah@gmail.com</td>
+                            <td class="border p-3 text-green-600">Active</td>
+                        </tr>
+
+                        <tr>
+                            <td class="border p-3">3</td>
+                            <td class="border p-3">David Wilson</td>
+                            <td class="border p-3">david@gmail.com</td>
+                            <td class="border p-3 text-red-600">Inactive</td>
+                        </tr>
+
+                        <tr>
+                            <td class="border p-3">4</td>
+                            <td class="border p-3">Emma Johnson</td>
+                            <td class="border p-3">emma@gmail.com</td>
+                            <td class="border p-3 text-green-600">Active</td>
+                        </tr>
+
+                        <tr>
+                            <td class="border p-3">5</td>
+                            <td class="border p-3">Michael Brown</td>
+                            <td class="border p-3">michael@gmail.com</td>
+                            <td class="border p-3 text-yellow-600">Pending</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

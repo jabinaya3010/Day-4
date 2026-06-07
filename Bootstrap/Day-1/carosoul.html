@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 ">
+     <nav class="bg-blue-600 text-white">
+        <div class="container mx-auto flex justify-between items-center p-5">
+            <h1 class="text-3xl font-bold">TechNova</h1>
+
+            <ul class="flex gap-6">
+                <li><a href="#home" class="hover:text-gray-200">Home</a></li>
+                <li><a href="#about" class="hover:text-gray-200">About</a></li>
+                <li><a href="#services" class="hover:text-gray-200">Services</a></li>
+                <li><a href="#contact" class="hover:text-gray-200">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-8 px-4">
+
+        <div class="relative w-full h-[250px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-lg shadow-lg">
+
+            <!-- Slides -->
+            <div id="carousel" class="flex h-full transition-transform duration-500">
+
+                <img src="../Assert/ai.jpg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                    alt="AI">
+
+                <img src="../Assert/app.jpg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                    alt="App Development">
+
+                <img src="../Assert/cloud.jpg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                    alt="Cloud Computing">
+
+            </div>
+
+            <!-- Previous Button -->
+            <button onclick="prevSlide()"
+                class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black px-4 py-2 rounded-full shadow-lg">
+                ❮
+            </button>
+
+            <!-- Next Button -->
+            <button onclick="nextSlide()"
+                class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black px-4 py-2 rounded-full shadow-lg">
+                ❯
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+        let index = 0;
+        const carousel = document.getElementById("carousel");
+        const totalSlides = 3;
+
+        function showSlide() {
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        function nextSlide() {
+            index = (index + 1) % totalSlides;
+            showSlide();
+        }
+
+        function prevSlide() {
+            index = (index - 1 + totalSlides) % totalSlides;
+            showSlide();
+        }
+
+        setInterval(nextSlide, 3000);
+    </script>
+
+</body>
+</html>

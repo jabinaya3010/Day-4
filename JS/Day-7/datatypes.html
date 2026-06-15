@@ -1,0 +1,83 @@
+<script>
+    console.log("Primitive Datatypes");
+    
+    let a=10;
+    console.log(a);
+    let b="String"
+    console.log(b);
+    let c=true
+    console.log(c);
+    let d=156478932179n
+    console.log(d);
+    let e;
+    console.log(e);
+    let f=5+a
+    console.log(f);
+
+    console.log("Non-Primitive Datatypes");
+    function add(a,b) {
+        console.log(a+b);  
+    }
+    add(5,10)
+    const sub=(a,b)=>{
+        console.log(a-b);
+    }
+    sub(12,58)
+    let arr=["Abinaya",21,"Full Stack"]
+    for(let i=0;i<=arr.length-1;i++) {
+        console.log(arr[i]);
+        
+    }   
+    let obj={
+        name:"abinaya",
+        age:21,
+        clg:"KRCT",
+        city:"Trichy"
+    }
+    console.log(obj);
+    console.log(obj.clg);
+    let arrObj = {
+        movie:"Jananayagam",
+        yor:2026,
+        cast:["Vijay","Mamithabiju"]
+    }
+    console.log(arrObj);
+    let book=[{Name:"javafull stack",YOR:2013,cities:["trichy","madurai"]}]
+    console.log(book);
+
+
+
+    let array =[30,20,"Full Stack"]
+    let object={name:"abi",age:21,skills:["time management","adaptability","leadership"]}
+    let arrobj=[{institute:"SLA",Course:"Full Stack",location:"KK Nagar"},{institute:"FETA",Course:"Software Testing",location:"Ashok Pillar"}]
+    let nestedarr=["abi","krct",21,["cts","tcs","accenture"]]
+    console.log(array);
+    console.log(object);
+    console.log(nestedarr);
+    for(values in arrobj){
+       console.log([values]);
+    }
+    arrobj.forEach((element,i) => {
+        console.log(element,i);
+        
+        
+    });
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+    
+    
+</script>

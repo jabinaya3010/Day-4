@@ -1,0 +1,111 @@
+<script>
+    console.log("task-1");
+    
+   let arrName = ["GOAT","Leo","Master"]
+   arrName.push("Ghilli") 
+   console.log(arrName);
+   arrName.pop()
+   console.log(arrName);
+   console.log("Final Array :",arrName);
+   
+   console.log("task-2");
+   let heros = ["Ajith","Suriya","SK"]
+   heros.shift()
+   console.log(heros);
+   heros.unshift("Vijay")
+   console.log(heros);
+   console.log("Final Array:",heros);
+   
+   console.log("task-3");
+   let fruits = ["Apple","Mango","Orange"]
+   fruits.push("Banana","Grapes")
+   console.log(fruits);
+   fruits.pop()
+   console.log(fruits);
+   fruits.unshift("Pineapple")  
+   console.log(fruits); 
+   fruits.shift()
+   console.log(fruits);
+   console.log("Final Array:",fruits);
+   
+   console.log("task-4");
+   let studentInfo = {
+   name:"Sudhan",
+   course:"MERN",
+   city:"Chennai"
+}
+console.log("using(.)");
+
+console.log(studentInfo.name);
+console.log(studentInfo.course);
+console.log(studentInfo.city);
+console.log("using ([])");
+console.log(studentInfo["name"]);
+console.log(studentInfo["course"]);
+console.log(studentInfo["city"]);
+
+console.log("task-5");
+
+let mobiles = [
+    {
+        brand: "Samsung",
+        price: 20000
+    },
+    {
+        brand: "iPhone",
+        price: 80000
+    },
+    {
+        brand: "OnePlus",
+        price: 35000
+    }
+];
+
+for(let i = 0; i < mobiles.length; i++) {
+    console.log(mobiles[i].brand + " - " + mobiles[i].price);
+}
+
+console.log("task-6");
+
+let movies = [
+    {
+        movie: "GOAT",
+        collection: 800
+    },
+    {
+        movie: "Leo",
+        collection: 600
+    },
+    {
+        movie: "Master",
+        collection: 500
+    }
+];
+
+
+let totalCollection = 0;
+
+
+let highestMovie = movies[0];
+
+for(let i = 0; i < movies.length; i++) {
+    totalCollection += movies[i].collection;
+
+    if(movies[i].collection > highestMovie.collection) {
+        highestMovie = movies[i];
+    }
+}
+
+console.log("Total Collection:", totalCollection);
+console.log("Highest Collection:", highestMovie.collection);
+console.log("Movie Name with Highest Collection:", highestMovie.movie);
+
+
+
+
+   
+   
+
+   
+   
+</script>

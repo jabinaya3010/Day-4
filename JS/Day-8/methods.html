@@ -1,0 +1,112 @@
+<script>
+    function arr(){
+        let array = [2,58,638,357,["vijay","ajith","str"]]
+        let dats = array.slice(2,5)
+        console.log(dats);
+        let datas = array.includes(375)
+        console.log(datas);
+    }
+    arr()
+
+    console.log("task-1");
+    let course =["HTML","CSS","JavaScript"]
+    course.push("React","Node.js")
+    console.log("final array =",course);
+    console.log("task-2");
+    let course_name =["HTML","CSS","JavaScript","React"]
+    course_name.pop()
+    let pop = course_name.pop()
+    console.log(course_name);
+    console.log(pop);
+    console.log("task-3");
+    let fruits = ["Apple","Mango","Orange","Banana"]
+    fruits.pop()
+    let shift = fruits.pop()
+    console.log(fruits);
+    console.log(shift);
+    console.log("task-4");
+    let hero = ["Ajith","Suriya","SK"]
+    hero.unshift("vijay")
+    hero.unshift("dhanush")
+    console.log("final array:",hero);
+    console.log("task-5");
+    let courseName =["HTML","CSS","Bootstrap","React"]
+    let copt = courseName.splice(2,1,"Dhanush")
+    console.log(copt);
+    console.log("final array =",courseName);
+    console.log("task-6");
+    let cour = ["HTML","CSS","JavaScript","React","Node"]
+    let data = cour.slice(2,4)
+    console.log(data);
+    console.log("task-7");
+    let student = {
+
+   name:"Sudhan",
+
+   course:"MERN",
+
+   city:"Chennai",
+
+   age:25
+
+};
+
+for (const key in student) {
+    console.log(key + ":" + student[key]);
+}
+console.log("task-8");
+let movies =[
+   {
+      name:"Vijay",
+      movie:"GOAT"
+   },
+
+   {
+      name:"Ajith",
+      movie:"Vidaamuyarchi"
+   },
+
+   {
+      name:"Suriya",
+      movie:"Kanguva"
+   }
+]
+for (const element of movies) {
+    console.log(element.name + "- " + element.movie); 
+}
+console.log("task-9");
+let actor = ["Vijay","Ajith","Suriya","SK"]
+console.log(actor.join("|"));
+console.log("task-10");
+let name =["HTML","CSS","JavaScript","React"]
+if(name.includes("React")){
+    console.log("Course Found");
+    
+}
+else{
+    console.log("Course Not Found");
+    
+}
+
+
+
+
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+</script>

@@ -1,0 +1,81 @@
+<script>
+    const task =()=>{
+        let hero = "Vijay";
+        for(let i=0;i<hero.length;i++){
+            if(i<hero.length){
+                console.log(hero[i]);
+                
+            }
+        }
+    }
+    task()
+    console.log("task-4");
+    const displays=()=>{
+        console.log("GOAT Movie Released");
+    }
+    const showMovie=(dis)=>{
+        dis()
+    }
+    showMovie(displays)
+    console.log("task-5");
+    const add = (a,b)=>{
+           let c=a+b
+           console.log("Sum : ",c);
+    }
+    const show=(cb)=>{
+         
+    }
+    show(add(45,60))
+    console.log("task-8");
+    function orderDelivered() {
+    console.log("Order Delivered");
+}
+
+function processOrder(callback) {
+    console.log("Order Received");
+    callback();
+}
+
+processOrder(orderDelivered);
+console.log("Task-9");
+
+const acc=(a)=>{
+        let amount = 0
+        const account=() =>{
+           amount+=a
+            console.log(amount);
+        }
+       return account
+    } 
+    const saving=acc(1)
+    saving()
+    saving()
+      saving()
+      console.log("Task-10");
+      const account=(amount)=>{
+        let initialBalance = 5000
+        const deposit=()=>{
+            initialBalance+=amount
+            console.log(initialBalance);
+        }
+        return deposit
+        const withdraw=()=>{
+         initialBalance -= amount
+            console.log(initialBalance);
+        }
+         return withdraw
+      }
+      const result = account(2000);
+     result()
+     result()
+
+      
+      
+      
+
+    
+   
+
+
+
+</script>

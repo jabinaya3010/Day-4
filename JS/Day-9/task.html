@@ -23,7 +23,7 @@
            console.log("Sum : ",c);
     }
     const show=(cb)=>{
-         
+        
     }
     show(add(45,60))
     console.log("task-8");
@@ -50,24 +50,34 @@ const acc=(a)=>{
     const saving=acc(1)
     saving()
     saving()
-      saving()
+    saving()
+
+
       console.log("Task-10");
-      const account=(amount)=>{
+
+    //   task 10
+
+      const account=()=>{
         let initialBalance = 5000
-        const deposit=()=>{
+
+
+        return {
+            deposit:(amount)=>{
             initialBalance+=amount
             console.log(initialBalance);
-        }
-        return deposit
-        const withdraw=()=>{
+        },
+        withdraw:(amount)=>{
          initialBalance -= amount
             console.log(initialBalance);
         }
-         return withdraw
+        }
+        
+       
       }
-      const result = account(2000);
-     result()
-     result()
+      const result = account();
+      
+      result.deposit(2000)
+      result.withdraw(5000)
 
       
       

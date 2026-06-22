@@ -51,6 +51,53 @@
 const{nam,courses,citys}=info
 console.log(`My name is ${nam}. I am from ${citys} . I am joined ${courses} course in SLA`);
 
+
+//task-11
+const skills = ["HTML", "CSS", "JavaScript"];
+
+const newSkills = [...skills, "React"];
+
+console.log(newSkills);
+
+
+//task-12
+let actor1 = ["Vijay","Ajith"]
+let actor2=["Suriya","SK"]
+let merge =[...actor1,...actor2]
+console.log(merge);
+
+
+//task-13
+let myname ={
+   name:"Sudhan",
+   city:"Chennai"
+}
+let copy ={...myname,}
+copy.name = "MERN"
+console.log(copy);
+
+//task-14
+
+const number =(...number)=>{
+    console.log(number);
+    
+}
+number(10,20,30,40)
+
+//task-15
+ const sum=(...sum)=>{
+    total=0
+    for (const num of sum) {
+        total += num
+        
+        
+    }
+    console.log(total); 
+ }
+ sum(10,20,30,40,50)
+
+
+
     
     
     

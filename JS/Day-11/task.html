@@ -1,0 +1,149 @@
+<script>
+
+// task-1
+
+const heroes = [
+
+   "Vijay",
+
+   "Ajith",
+
+   "Suriya"
+
+];
+const hero = heroes.map((e,i)=>e.toUpperCase())
+console.log(hero);
+
+// task-2
+const collections = [
+
+   100,
+
+   200,
+
+   300,
+
+   400
+];
+const reduce =collections.map((e,i)=>e*10)
+console.log(reduce);
+
+// task-3
+const movies = [
+
+   "GOAT",
+
+   "Leo",
+
+   "Master"
+];
+const result = movies.map((e,i)=> `Movie: ${e}`)
+console.log(result);
+
+// task-4
+const collection = [
+
+   100,
+
+   500,
+
+   800,
+
+   200,
+
+   900
+];
+const vary=collection.filter((e,i)=>e>500)
+console.log(vary);
+
+//take-5
+const marks = [
+
+   35,
+
+   80,
+
+   20,
+
+   90,
+
+   45
+];
+const total =marks.filter((e,i)=>e>35)
+console.log(total);
+
+//task-6
+const heroeses = [
+
+   "Vijay",
+
+   "Ajith",
+
+   "SK",
+
+   "Suriya"
+];
+const movie = heroeses.filter((e,i)=>e.length>4)
+console.log(movie);
+
+//task-7
+
+const actor = [
+
+   "Vijay",
+
+   "Ajith",
+
+   "Suriya"
+];
+const actors=actor.find((e,i)=>e=="Ajith")
+console.log(actors);
+
+//task-8
+
+const number = [
+
+   100,
+
+   500,
+
+   800,
+
+   200
+];
+const results = number.find(e => e > 400);
+
+console.log(results);
+
+//task-9
+
+const actores = [
+
+   "Vijay",
+
+   "Ajith",
+
+   "Suriya"
+];
+const index =actores.findIndex((e,i)=>e==="Suriya")
+console.log(actores[index]);
+
+//task-10
+
+const moviess = [
+
+   "GOAT",
+
+   "Leo",
+
+   "Master"
+];
+const name =moviess.findIndex((e)=>e==="Leo")
+console.log(name);
+
+//task=11
+
+
+
+
+</script>
